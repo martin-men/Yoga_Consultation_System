@@ -1,0 +1,56 @@
+#preview-container {
+    width: 20vw;
+    max-height: 40vh;
+    border: 2px solid #000000;
+    text-align: center;
+    padding: 1%;
+    border-radius: 50px;
+    background-color: #ffeebb;
+    overflow: auto;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+#preview-container:hover {
+    background-color: #65aeebaa;
+    transition: 0.5s;
+}
+
+#preview-container a {
+    text-decoration: none;
+    color: #000000;
+}
+
+#preview-container h2 {
+    margin: 2% 0%;
+    padding: 0;
+}
+
+#preview-container h3 {
+    margin: 0;
+    padding: 0;
+    color: #444;
+}
+
+#preview-container img {
+    width: 100%;
+    border: 1px solid #000000;
+}
+
+#preview-container img:hover {
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+#preview-container img:not(:hover) {
+    border-radius: 50px;
+    transition: 0.5s;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#preview-container::-webkit-scrollbar {
+    display: none;
+}
