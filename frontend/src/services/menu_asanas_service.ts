@@ -1,6 +1,6 @@
-import { Asanas } from '../../types'
+import { Asana } from '../../types'
 
-export const getAsanas = async (): Promise<Asanas> => {
+export const getAsanas = async (): Promise<Asana []> => {
     const url = 'http://localhost:3000/Posturas'
     return fetch(url, {
         method: 'GET',

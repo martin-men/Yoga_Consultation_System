@@ -14,7 +14,7 @@ export function MenuAsanas() {
             const asanas = await getAsanas()
             const dataAsanas : {[key: string] : Asana} = {}
             asanas.forEach((asana: Asana) => {
-                dataAsanas[asana.asanaID] = asana
+                dataAsanas[asana.asanasID] = asana
             })
             setAsanas(dataAsanas)
         }
@@ -36,7 +36,7 @@ export function MenuAsanas() {
                         const asana : Asana = asanas[key]
                         return(
                             <div className='asana-preview'>
-                                <AsanaPreview asanaID={asana.asanaID} name_es={asana.nombre_es} sanskrit={asana.sanscrito} name_en={asana.nombre_in} image={asana.imagen}/>
+                                <AsanaPreview asanaID={asana.asanasID} name_es={asana.nombre_es} sanskrit={asana.sanscrito} name_en={asana.nombre_in} image={asana.imagen}/>
                             </div>
                         )
                     })

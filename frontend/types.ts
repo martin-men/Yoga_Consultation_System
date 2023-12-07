@@ -8,16 +8,11 @@ export interface Morfemas {
 }
 
 export interface Asana {
-    asanaID: string;
+    asanasID: string;
     nombre_es: string;
     sanscrito: string;
     nombre_in: string;
     imagen: string;
-}
-
-export interface Asanas {
-    forEach(arg0: (asana: Asana) => void): unknown;
-    asanas: Asana[];
 }
 
 export interface AsanaMorfemas {

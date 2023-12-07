@@ -27,7 +27,7 @@
 #menu-content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    row-gap: 5%;
+    row-gap: 1%;
 }
 
 .asana-preview {
