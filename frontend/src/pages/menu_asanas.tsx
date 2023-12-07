@@ -1,8 +1,26 @@
-import { AsanaPreview } from "../components/asana_preview";
-import { SearchBar } from "../components/search_bar";
-import '../styles/menu_asanas.css';
+import { AsanaPreview } from "../components/asana_preview"
+import { SearchBar } from "../components/search_bar"
+import '../styles/menu_asanas.css'
+import { useGlobalContext } from '../../global_context'
+import { useEffect } from 'react'
+import { getAsanas } from "../services/menu_asanas_service"
+import { Asana } from "../../types"
 
 export function MenuAsanas() {
+    const { asanas, setAsanas, setCurrentAsana } = useGlobalContext()
+
+    useEffect(() => {
+        const fetchAsanas = async () => {
+            const asanas = await getAsanas()
+            const dataAsanas : {[key: string] : Asana} = {}
+            asanas.forEach((asana: Asana) => {
+                dataAsanas[asana.asanaID] = asana
+            })
+            setAsanas(dataAsanas)
+        }
+        fetchAsanas()
+    }, [])
+
     return (
         <>
             <header id='header'>
@@ -13,18 +31,16 @@ export function MenuAsanas() {
                 <h2>Posturas - Asanas - Postures</h2>
             </header>
             <main id='menu-content'>
-                <div className='row'>
-                    <AsanaPreview name_es="Asana 1" sanskrit="Asana 1" name_en="Posture 1" link="" image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAJ1BMVEV5vZr/suCU57x/P5jWoPJ3upeW6r6W8L99KJV3NJDcpvjTn/P/s9+fI4b2AAABCElEQVR4nO3QQQGAIAAEMERARfrnpcN9+GwRVkqkj5p43jvxzZb41xXJSpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4ceLEiRMnTpw4OXuyAdPHrEGNCAzvAAAAAElFTkSuQmCC"/>
-                    <AsanaPreview name_es="Asana 1" sanskrit="Asana 1" name_en="Posture 1" link="" image="https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_QL75_UX500_CR0,234,500,281_.jpg"/>
-                    <AsanaPreview name_es="Asana 1" sanskrit="Asana 1" name_en="Posture 1" link="" image="https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_QL75_UX500_CR0,234,500,281_.jpg"/>
-                    <AsanaPreview name_es="Asana 1" sanskrit="Asana 1" name_en="Posture 1" link="" image="https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_QL75_UX500_CR0,234,500,281_.jpg"/>
-                </div>
-                <div className='row'>
-                    <AsanaPreview name_es="Asana 1" sanskrit="Asana 1" name_en="Posture 1" link="" image="https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_QL75_UX500_CR0,234,500,281_.jpg"/>
-                    <AsanaPreview name_es="Asana 1" sanskrit="Asana 1" name_en="Posture 1" link="" image="https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_QL75_UX500_CR0,234,500,281_.jpg"/>
-                    <AsanaPreview name_es="Asana 1" sanskrit="Asana 1" name_en="Posture 1" link="" image="https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_QL75_UX500_CR0,234,500,281_.jpg"/>
-                    <AsanaPreview name_es="Asana 1" sanskrit="Asana 1" name_en="Posture 1" link="" image="https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_QL75_UX500_CR0,234,500,281_.jpg"/>
-                </div>
+                {
+                    Object.keys(asanas).map((key : string) => {
+                        const asana : Asana = asanas[key]
+                        return(
+                            <div className='asana-preview'>
+                                <AsanaPreview asanaID={asana.asanaID} name_es={asana.nombre_es} sanskrit={asana.sanscrito} name_en={asana.nombre_in} image={asana.imagen}/>
+                            </div>
+                        )
+                    })
+                }
             </main>
         </>
     )
