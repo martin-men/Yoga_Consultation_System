@@ -30,6 +30,7 @@ class ManejadorDatos {
                                 nombre_es: row.nombre_es,
                                 sanscrito: row.sanscrito,
                                 nombre_in: row.nombre_in,
+                                imagen: row.imagen,
                             },
                             morfemas: [],
                         },
