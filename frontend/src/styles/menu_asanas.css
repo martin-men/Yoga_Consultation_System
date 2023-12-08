@@ -24,10 +24,14 @@
     padding: 3% 0%;
 }
 
-.row {
+#menu-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 1%;
+}
+
+.asana-preview {
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    margin: 2%;
-    gap: 2.5%;
 }

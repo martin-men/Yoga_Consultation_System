@@ -1,9 +1,11 @@
 import express from "express";
+import cors from "cors";
 import posturasRutas from "./posturas_rutas.js";
 import info_ruta from "./info_ruta.js";
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use("/", posturasRutas);
 app.use("/",info_ruta)
