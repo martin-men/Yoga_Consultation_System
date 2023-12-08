@@ -3,7 +3,7 @@
     height: 25vw;
     border: 2px solid #1d6365;
     padding: 2%;
-    border-radius: 50px;
+    border-radius: 0px 50px 50px 50px;
     margin-left: 10%;
     background-color: #ffeebb;
     display: inline-block;
@@ -21,23 +21,29 @@
 }
 
 #card-container h2 {
-    margin-top: 5%;
-    margin-left: 55%;
-    padding: 0;
+    margin-top: 4%;
+    margin-left: 50%;
     font-size: 45px;
     color: #1c8d79;
+}
+
+#card-container h1 {
+    margin-top: 5%;
+    margin-left: 65%;
+    font-size: 45px;
+    color: #1d6365;
 }
 
 #card-container h3 {
     margin-top: -1%;
     margin-left: 55%;
-    padding: 0;
+    font-size: 2cap;
     color: #1d766b;
 }
 
 #card-container img {
-    width: 37%;
-    border: 1px solid #1d766b;
+    width: 33%;
+    border: 2px solid #1d766b;
     border-radius: 20px;
     margin: 2% 2%;
     position: absolute;
