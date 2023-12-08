@@ -9,7 +9,7 @@ type AsanaCardProps = {
     morpheme: string;
 }
 
-export function AsanaCard({name_es, sanskrit, name_en, image, link, morpheme} : AsanaCardProps) {
+export function AsanaCard({name_es, sanskrit, name_en, image, morpheme} : AsanaCardProps) {
     return (
         <div id='card-container'>
             <img src={image} alt={name_en + ' posture'} />
