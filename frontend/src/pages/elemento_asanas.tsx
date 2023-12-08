@@ -10,8 +10,7 @@ export function ElementoAsanas() {
                 </div>
             </header>
             <main id='menu-content'>
-            
-            <AsanaCard name_es="Nombre Asana" sanskrit="Sanscrito" name_en="Nombre ingles" link="" image="https://www.xlsemanal.com/wp-content/uploads/sites/3/2017/03/yoga-relax-768x506.jpg" morpheme="Mor·phe·ma"/>
+            <AsanaCard name_es="Nombre Asana" sanskrit="Sanscrito" name_en="Nombre ingles" image="https://www.xlsemanal.com/wp-content/uploads/sites/3/2017/03/yoga-relax-768x506.jpg" morpheme="Mor·phe·ma"/>
             </main>
         </>
     )

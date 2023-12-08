@@ -41,12 +41,20 @@
     color: #1d766b;
 }
 
-#card-container img {
+#img-postura {
     width: 33%;
     border: 2px solid #1d766b;
     border-radius: 20px;
     margin: 2% 2%;
     position: absolute;
+}
+
+#sello{
+    position: absolute;
+    width: 2%;
+    margin-top: -25%;
+    margin-left: 72.5%;
+    filter: invert(85%) sepia(93%) saturate(4625%) hue-rotate(314deg) brightness(79%) contrast(89%);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
