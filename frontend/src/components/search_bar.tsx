@@ -26,11 +26,16 @@ export function SearchBar({ search, setSearch, filterAsanas, resetSearch }: Sear
                 value={search} 
                 placeholder="Búsqueda por nombre..." 
                 onChange={(text) => {
-                    const textValue = text.target.value 
-                    textValue !== '' ? setSearching(true) : setSearching(false)
+                    const textValue = text.target.value
+                    setSearching(textValue !== '')
                     setSearch(textValue);
-                }
-            }/>
+                }}
+                onKeyDown={(event) => {
+                    if (event.key === 'Enter') {
+                        filterAsanas();
+                    }
+                }}
+            />
             <button onClick={() => { filterAsanas() }}>Buscar</button>
         </div>
     )

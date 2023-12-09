@@ -1,12 +1,7 @@
-@font-face {
-    font-family: "Acme";
-    src: url(../assets/fonts/Acme-Regular.ttf), format("truetype");
-}
-
 body {
-    font-family: "Acme";
+    font-family: 'Cormorant Garamond', serif;
     margin: 0px;
-    background-color: #89a1b599;
+    background-color: #DEE2E7;
     /* Hide scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none;
     /* IE and Edge */
