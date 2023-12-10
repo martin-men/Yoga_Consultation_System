@@ -45,6 +45,16 @@ class ManejadorDatos {
                     });
                 }
             }
+
+            // Modificación para mover el primer morfema al final
+            for (const asana of asanas) {
+                const morfemas = asana.asana_completa.morfemas;
+                if (morfemas[0].morfema == "Asana") {
+                    const primerMorfema = morfemas.shift(); // Quitar el primer elemento
+                    morfemas.push(primerMorfema); // Agregarlo al final
+                }
+            }
+
             this.datos_resultantes = asanas;
             return asanas;
         } catch (error) {
