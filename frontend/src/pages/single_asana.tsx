@@ -18,9 +18,13 @@ export function SingleAsana({ name_es, sanskrit, name_en, image }: SingleAsanaPr
 
     useEffect(() => {
         const fetchMorphemes = async () => {
-            const morphemesData = await getMorphemes(sanskrit)
-            console.log(morphemesData)
-            setMorphemes(morphemesData)
+            try {
+                const morphemesData = await getMorphemes(sanskrit)
+                console.log(morphemesData)
+                setMorphemes(morphemesData)
+            } catch (error) {
+                console.log(error)
+            }
         }
         fetchMorphemes()
     }, [])

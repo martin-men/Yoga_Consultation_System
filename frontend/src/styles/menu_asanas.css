@@ -42,3 +42,12 @@
     align-items: center;
     justify-content: center;
 }
+
+#no-results {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 10%;
+    color: #2A7980;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #FFF;
+}
