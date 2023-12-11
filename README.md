@@ -20,4 +20,4 @@ Finalmente, para visualizar la información completa de la postura deseada tendr
 <img src="https://github.com/martin-men/Yoga_Consultation_System/blob/91322b3b29569f6119493539026eaf121e162351/Vista%20Previa/asana.png" alt ="Información Asana" width ="750px">
 
 ## Documentación
-<a href ="https://epnecuador-my.sharepoint.com/:f:/g/personal/daniela_colcha_epn_edu_ec/ErVhK6C4I35AjX4Mkjp8VEEBr4kntR_289ToY_b20r3_BA?e=6hiDdS" target = "_"> <img src="https://img.shields.io/badge/OneDrive-0078D4.svg?style=for-the-badge&logo=microsoftonedrive&logoColor=white" alt="OneDrive Logo" width="100px" /></a>
+<a href ="https://epnecuador-my.sharepoint.com/:f:/g/personal/daniela_colcha_epn_edu_ec/EvPd7gzswMRLocOVMuuNyl8Bbo8Ij2Dibcd7jtv1R8tHmQ?e=obOxiJ" target = "_"> <img src="https://img.shields.io/badge/OneDrive-0078D4.svg?style=for-the-badge&logo=microsoftonedrive&logoColor=white" alt="OneDrive Logo" width="100px" /></a>
