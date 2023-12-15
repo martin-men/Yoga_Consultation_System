@@ -1,0 +1,140 @@
+#single-asana-header {
+    height: 15vh;
+    background-color: #2A798077;
+    border: 1px solid #000;
+}
+
+#go-back {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 27%;
+    
+    cursor: pointer;
+    width: 35vw;
+}
+
+#go-back:not(:hover) {
+    color: #FFF;
+    text-shadow: 2px 2px 2px #000;
+    transition: 0.5s;
+}
+
+#go-back:hover {
+    color: #2A7980;
+    text-shadow: 2px 2px 2px #FFF;
+    transition: 0.5s;
+}
+
+#single-asana-footer {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    background-color: #2A798077;
+    border: 1px solid #000;
+}
+
+#asana-name {
+    margin: 0 0 0 1%;
+}
+
+#back-icon {
+    width: 50px;
+    margin-left: 4%;
+}
+
+#content {
+    display: flex;
+    height: 70vh;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0% 5%;
+}
+
+#card-container {
+    min-width: 50vw;
+    padding: 2% 0%;
+    text-align: center;
+    margin-left: 3%;
+    box-shadow: 5px 5px 15px 0px #00000099;
+    background-color: #F6F0EA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+#card-container #translations h3 {
+    margin: 0;
+    font-size: 2rem;
+    color: #737F86;
+}
+
+#card-container #translations h3:hover {
+    font-size: 2.2rem;
+    color: #2B7B79;
+    transition: 0.5s;
+}
+
+#img-posture {
+    max-width: 50vw;
+    max-height: 50vh;
+    border-radius: 50%;
+    box-shadow: 5px 5px 15px 0px #00000099;
+}
+
+#translations {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #DEE2E799;
+    padding: 5%;
+    box-shadow: 4px 4px 10px 0px #00000099;
+    text-shadow: 0.3px 0.3px 0.3px #000000;
+}
+
+#morphemes-container {
+    display: flex;
+    gap: 15px;
+}
+
+.morpheme-container {
+    padding: 15px;
+    box-shadow: 1px 4px 5px 0px #00000099;
+}
+
+.morpheme-container:hover {
+    background-color: #D6B93FAA;
+    transition: 0.4s;
+}
+
+.morpheme-container:not(hover) {
+    background-color: #D6B93F33;
+    transition: 0.4s;
+}
+
+.morpheme-name {
+    font-size: 2rem;
+    color: #2A7980;
+    text-shadow: 0.3px 0.3px 0.3px #000000;
+    margin: 0;
+}
+
+.morpheme-meaning {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    text-shadow: 0.3px 0.3px 0.3px #000000;
+    margin: 0;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#card-container::-webkit-scrollbar {
+    display: none;
+}
