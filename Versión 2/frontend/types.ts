@@ -13,6 +13,7 @@ export interface Asana {
     sanscrito: string;
     nombre_in: string;
     imagen: string;
+    video: string;
 }
 
 export interface AsanaMorfemas {

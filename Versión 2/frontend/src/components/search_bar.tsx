@@ -8,19 +8,13 @@ type SearchBarProps = {
     setSearch: (search: string) => void;
     filterAsanas: () => void;
     resetSearch: () => void;
+    asanasSearch: boolean;
 }
 
-export function SearchBar({ search, setSearch, filterAsanas, resetSearch }: SearchBarProps) {
+export function SearchBar({ search, setSearch, filterAsanas, resetSearch, asanasSearch }: SearchBarProps) {
     const [ searching, setSearching ] = useState(false)
     return (
         <div id="search-bar">
-            {
-                searching
-                ?
-                <img src={Reset} alt="Reset icon" id='reset-icon' onClick={() => { resetSearch(); setSearching(false); }}/>
-                :
-                <img src={Search} alt="Search icon" id='search-icon'/>
-            }
             <input 
                 type="text" 
                 value={search} 
@@ -36,7 +30,13 @@ export function SearchBar({ search, setSearch, filterAsanas, resetSearch }: Sear
                     }
                 }}
             />
-            <button onClick={() => { filterAsanas() }}>Buscar</button>
+            {
+                searching
+                ?
+                <button className={asanasSearch ?  'green-button' : 'purple-button'} onClick={() => { resetSearch(); setSearching(false); }}><img src={Reset} alt="Reset icon" id='reset-icon'/></button>
+                :
+                <button className={asanasSearch ?  'green-button' : 'purple-button'} onClick={() => { filterAsanas() }}><img src={Search} alt="Reset icon" id='reset-icon'/></button>
+            }
         </div>
     )
 }

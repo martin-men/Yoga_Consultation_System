@@ -1,46 +1,79 @@
-#header-title-section {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 2% 0% 0% 0%;
-}
-
-#header-title-section h1 {
-    font-size: 3rem;
-    margin: 0% 4% 0% 0%;
-    color: #F6F0EA;
-    text-shadow: 2px 2px 2px #000000;
-}
-
 #header {
-    text-align: center;
-    background-color: #2A798077;
-    border-radius: 0px 0px 120px 120px;
-    border: 1px solid #000000;
-    margin-bottom: 3%;
+    height: 70vw;
+    background-image: url("../assets/imgs/header-background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Cormorant Garamond', serif;
+    color: #fff;
+    text-shadow: 2px 2px 0px #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: sticky;
-    top: 0;
+    top: -50vw;
+    z-index: 10;
+}
+
+#header h1 {
+    margin: 0 -3vw 0 0;
+    padding: 0;
+    letter-spacing: 3vw;
+    font-size: clamp(2rem, 10vw, 6rem);
 }
 
 #header h2 {
-    font-size: 2rem;
     margin: 0;
-    padding: 1.5% 0%;
-    color: #F6F0EA;
-    text-shadow: 2px 2px 2px #000000;
+    font-size: clamp(1.4rem, 5vw, 3rem);
+}
+
+#toggle-switch {
+    padding: 3vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: calc(15px + 1.5vw);
+}
+
+#search-bar {
+    margin: 0 4vw;
+    position: sticky;
+    top: calc((20vw - 34px) / 2);
+}
+
+#asanas-view, #morfemas-view {
+    text-align: center;
+    margin: 3vh 0 0 0;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 20px;
+}
+
+#asanas-view {
+    background-color: #2A798055;
+}
+
+#morfemas-view {
+    background-color: #c2a7cd99;
 }
 
 #menu-content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    row-gap: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1.5vh 0;
 }
 
 .asana-preview {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 1.5vh 4vw;
 }
 
 #no-results {
@@ -50,4 +83,19 @@
     color: #2A7980;
     font-weight: bold;
     text-shadow: 1px 1px 1px #FFF;
+}
+
+@media only screen and (min-width: 768px) {
+    #header {
+        height: 38vw;
+        top: -28vw;
+    }
+
+    #search-bar {
+        top: calc((10vw - 54px) / 2);
+    }
+
+    .asana-preview {
+        margin: 1.5vh 1.5vw;
+    }
 }
