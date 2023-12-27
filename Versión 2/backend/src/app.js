@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import posturasRutas from "./posturas_rutas.js";
+import posturasRutas from "../posturas_rutas.js";
 
 const app = express();
 
