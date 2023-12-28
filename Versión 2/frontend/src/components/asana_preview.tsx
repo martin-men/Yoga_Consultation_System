@@ -12,8 +12,6 @@ type AsanaPreviewProps = {
 export function AsanaPreview({ asanaID, name_es, sanskrit, name_en, image } : AsanaPreviewProps) {
     const { setCurrentAsana } = useGlobalContext()
     
-    
-
     return (
         <div id='preview-container' onClick={ () => { setCurrentAsana(asanaID) } }>
             <img src={image} alt="Asana position image" />

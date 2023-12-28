@@ -33,9 +33,9 @@ export function SearchBar({ search, setSearch, filterAsanas, resetSearch, asanas
             {
                 searching
                 ?
-                <button className={asanasSearch ?  'green-button' : 'purple-button'} onClick={() => { resetSearch(); setSearching(false); }}><img src={Reset} alt="Reset icon" id='reset-icon'/></button>
+                <button id='reset-button' className={asanasSearch ?  'green-button' : 'purple-button'} onClick={() => { resetSearch(); setSearching(false); }}><img src={Reset} alt="Reset icon" id='reset-icon'/></button>
                 :
-                <button className={asanasSearch ?  'green-button' : 'purple-button'} onClick={() => { filterAsanas() }}><img src={Search} alt="Reset icon" id='reset-icon'/></button>
+                <button id='search-button' className={asanasSearch ?  'green-button' : 'purple-button'} onClick={() => { filterAsanas() }}><img src={Search} alt="Reset icon" id='reset-icon'/></button>
             }
         </div>
     )

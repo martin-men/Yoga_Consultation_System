@@ -44,8 +44,8 @@
 
 #asanas-view, #morfemas-view {
     text-align: center;
-    margin: 3vh 0 0 0;
-    font-size: clamp(1.5rem, 5vw, 3rem);
+    margin: 6vh 0 3vh 0;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-family: 'Cormorant Garamond', serif;
     font-weight: bold;
     color: #fff;
@@ -55,10 +55,12 @@
 
 #asanas-view {
     background-color: #2A798055;
+    transition: all 0.5s;
 }
 
 #morfemas-view {
     background-color: #c2a7cd99;
+    transition: all 0.5s;
 }
 
 #menu-content {
@@ -69,7 +71,7 @@
     padding: 1.5vh 0;
 }
 
-.asana-preview {
+.menu-content-item{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,7 +97,7 @@
         top: calc((10vw - 54px) / 2);
     }
 
-    .asana-preview {
+    .menu-content-item {
         margin: 1.5vh 1.5vw;
     }
 }

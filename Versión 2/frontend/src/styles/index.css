@@ -1,7 +1,7 @@
 body {
     font-family: 'Nunito Sans', sans-serif;
     margin: 0px;
-    background-color: #DEE2E7;
+    background:  url('../assets/imgs/background-pattern.png');
     /* Hide scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none;
     /* IE and Edge */
