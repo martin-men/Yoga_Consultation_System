@@ -13,6 +13,7 @@ model asanas {
   sanscrito String @db.Text
   nombre_in String @db.Text
   imagen    String @db.Text
+  video     String @db.Text
 }
 
 model decomposition {
@@ -25,7 +26,8 @@ model decomposition {
 }
 
 model morfemas {
-  morfemaID   String @id @db.Char(2)
-  morfema     String @db.Text
-  significado String @db.Text
+  id             String @id @db.Char(2)
+  morfema        String @db.Text
+  significado_es String @db.Text
+  significado_in String @db.Text
 }

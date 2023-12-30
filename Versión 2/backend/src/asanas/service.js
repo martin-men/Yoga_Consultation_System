@@ -8,8 +8,7 @@ const prisma = new PrismaClient();
 async function consult_asanas() {
     try {
         // ejecución de la query
-        const asanas = await prisma.$queryRaw `SELECT a.*
-                                                FROM asanas a`;
+        const asanas = await prisma.asanas.findMany();
         return asanas;
         // control de excepciones
     } catch (error) {

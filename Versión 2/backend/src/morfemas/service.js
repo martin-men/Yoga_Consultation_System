@@ -1,4 +1,4 @@
-// importación de librerá de prisma 
+// importación de librería de prisma 
 import { PrismaClient } from "@prisma/client";
 
 //creación de objeto prisma 
@@ -8,8 +8,7 @@ const prisma = new PrismaClient();
 async function consult_morfemas() {
     try {
         //ejecución de la query para obtener los morfemas
-        const morfemas = await prisma.$queryRaw `SELECT m.*
-                                                FROM morfemas m`;
+        const morfemas = await prisma.morfemas.findMany();
         return morfemas;
         // control de excepciones
     } catch (error) {
