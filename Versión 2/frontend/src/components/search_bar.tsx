@@ -1,20 +1,35 @@
 import Search from '../assets/icons/search.svg'
 import Reset from '../assets/icons/reset.svg'
 import '../styles/search_bar.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 type SearchBarProps = {
     search: string;
     setSearch: (search: string) => void;
+    viewAsanas: boolean;
     filterAsanas: () => void;
+    filterMorphemes: () => void;
     resetSearch: () => void;
     asanasSearch: boolean;
 }
 
-export function SearchBar({ search, setSearch, filterAsanas, resetSearch, asanasSearch }: SearchBarProps) {
+export function SearchBar({ search, setSearch, viewAsanas, filterAsanas, filterMorphemes, resetSearch, asanasSearch }: SearchBarProps) {
     const [ searching, setSearching ] = useState(false)
+    useEffect(() => {
+        if (search === '') {
+            setSearching(false)
+        }
+    })
+
     return (
         <div id="search-bar">
+            {
+                searching
+                ?
+                <button id='reset-button' className={asanasSearch ?  'green-button' : 'purple-button'} onClick={() => { resetSearch(); setSearching(false); }}><img src={Reset} alt="Reset icon" id='reset-icon'/></button>
+                :
+                <></>
+            }
             <input 
                 type="text" 
                 value={search} 
@@ -22,21 +37,15 @@ export function SearchBar({ search, setSearch, filterAsanas, resetSearch, asanas
                 onChange={(text) => {
                     const textValue = text.target.value
                     setSearching(textValue !== '')
-                    setSearch(textValue);
+                    setSearch(textValue)
                 }}
                 onKeyDown={(event) => {
                     if (event.key === 'Enter') {
-                        filterAsanas();
-                    }
+                        viewAsanas ? filterAsanas() : filterMorphemes();
+                    } 
                 }}
             />
-            {
-                searching
-                ?
-                <button id='reset-button' className={asanasSearch ?  'green-button' : 'purple-button'} onClick={() => { resetSearch(); setSearching(false); }}><img src={Reset} alt="Reset icon" id='reset-icon'/></button>
-                :
-                <button id='search-button' className={asanasSearch ?  'green-button' : 'purple-button'} onClick={() => { filterAsanas() }}><img src={Search} alt="Reset icon" id='reset-icon'/></button>
-            }
+            <button id='search-button' className={asanasSearch ?  'green-button' : 'purple-button'} onClick={() => { viewAsanas ? filterAsanas() : filterMorphemes() }}><img src={Search} alt="Reset icon" id='reset-icon'/></button>
         </div>
     )
 }

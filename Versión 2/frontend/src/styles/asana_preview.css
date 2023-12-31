@@ -18,45 +18,43 @@
     /* Firefox */
 }
 
-#preview-container h2 {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    text-shadow: 2px 2px 2px #FFF;
-    color: #149b9c;
-}
-
-#preview-container h3 {
-    margin: 0;
-    padding: 0;
-    color: #444;
-    text-align: center;
-    text-shadow: 2px 2px 2px #FFF;
-}
-
 #preview-container img {
     position: absolute;
     z-index: -1;
-    opacity: 0.5;
-    border-radius: 20px 20px 0 0;
     object-fit: cover;
     object-position: center;
 }
 
 #preview-container:hover img {
-    height: 115%;
-    opacity: 0.8;
-    transition: 0.5s;
-}
-
-#preview-container:hover #preview-info {
-    background-color: #9ecfd3AA;
+    height: 40%;
+    border-radius: 50%;
+    border: 1px solid #149b9c;
+    opacity: 1;
     transition: 0.5s;
 }
 
 #preview-container:not(:hover) img {
     height: 100%;
+    border-radius: 0;
+    border: 0px solid #149b9c00;
     opacity: 0.5;
+    transition: 0.5s;
+}
+
+#preview-info {
+    padding: 5%;
+    border-radius: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#preview-container:hover #preview-info {
+    background-color: #9ecfd300;
+    gap: 0px;
     transition: 0.5s;
 }
 
@@ -65,9 +63,43 @@
     transition: 0.5s;
 }
 
-#preview-info {
-    padding: 10%;
-    border-radius: 20px;
+#preview-container h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-shadow: 2px 2px 2px #FFF;
+    color: #149b9c;
+}
+
+#preview-container:hover h2 {
+    font-size: 1rem;
+    transform: translate(0, -65px);
+    transition: 0.5s;
+}
+
+#preview-container:not(:hover) h2 {
+    font-size: 1.2rem;
+    transform: translate(0, 0);
+    transition: 0.5s;
+}
+
+#preview-container h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    color: #444;
+    text-align: center;
+    text-shadow: 2px 2px 2px #FFF;
+}
+
+#preview-container:hover h3 {
+    transform: translate(0, 70px);
+    transition: 0.5s;
+}
+
+#preview-container:not(:hover) h3 {
+    transform: translate(0, 0);
+    transition: 0.5s;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -79,5 +111,16 @@
     #preview-container {
         width: 300px;
         height: 300px;
+    }
+
+    #preview-container:hover h2 {
+        font-size: 1rem;
+        transform: translate(0, -85px);
+        transition: 0.5s;
+    }
+
+    #preview-container:hover h3 {
+        transform: translate(0, 80px);
+        transition: 0.5s;
     }
 }

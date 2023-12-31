@@ -1,81 +1,83 @@
 import { useGlobalContext } from '../../global_context.tsx'
 import { getMorphemes } from "../services/single_asana_service.ts"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { Morfema } from "../../types.ts"
 import '../styles/single_asana.css'
 import Back from '../assets/icons/back.svg'
+import { LoadingSpinner } from '../components/loading_spinner.tsx'
 
 type SingleAsanaProps = {
+    id: string;
     name_es: string;
     sanskrit: string;
     name_en: string;
     image: string;
+    video: string;
 }
 
-export function SingleAsana({ name_es, sanskrit, name_en, image }: SingleAsanaProps) {
+export function SingleAsana({ id, name_es, sanskrit, name_en, image, video }: SingleAsanaProps) {
     const { setCurrentAsana } = useGlobalContext()
     const [morphemes, setMorphemes] = useState<Morfema[]>([])
+    const [isLoading, setIsLoading] = useState<boolean>(false)
 
     useEffect(() => {
         window.scrollTo(0, 0)
         const fetchMorphemes = async () => {
+            setIsLoading(true)
             try {
-                const morphemesData = await getMorphemes(sanskrit)
+                const morphemesData = await getMorphemes(id)
                 console.log(morphemesData)
                 setMorphemes(morphemesData)
             } catch (error) {
                 console.log(error)
             }
+            setIsLoading(false)
         }
-        
-        // fetchMorphemes()
+        fetchMorphemes()
     }, [])
 
     return (
         <>
-            <button id='go-back' onClick={() => { setCurrentAsana('') }}>
-                <img id='back-icon' src={Back} alt={'Go back icon'} />
-                <span>Volver</span>
-            </button>
-            <div id='content'>
-                <div id="asana-name">
-                    <h1>{name_es + ' triangulo invertido 2 de la virgen'}</h1>
-                </div>
-                <div id="img-posture">
-                    <img src={image} alt={name_en + ' posture'} />
-                </div>
-                <h2 className='subtitle'>Traducciones</h2>
-                <div id="translations">
-                    <h3>{name_es } · ES</h3>
-                    <h3>{sanskrit} · SKT</h3>
-                    <h3>{name_en} · EN</h3>
-                </div>
-                <h2 className='subtitle'>Morfemas</h2>
-                <div id='morphemes-container'>
-                    {/* {morphemes.map((morpheme, index) => {
-                            return (
-                                <div key={index} className='morpheme-container'>
-                                    <p className='morpheme-name'>{morpheme.morfema}</p>
-                                    <p className='morpheme-meaning'>{morpheme.significado}</p>
-                                </div>
-                            )
-                        })} */}
-                    <div className='morpheme-container'>
-                        <p className='morpheme-name'>I</p>
-                        <p className='morpheme-meaning'>Yo</p>
-                    </div>
-                    <div className='morpheme-container'>
-                        <p className='morpheme-name'>Am</p>
-                        <p className='morpheme-meaning'>Soy</p>
-                    </div>
-                    <div className='morpheme-container'>
-                        <p className='morpheme-name'>Batman</p>
-                        <p className='morpheme-meaning'>Muercielago</p>
-                    </div>
-                </div>
-                <h2 className='subtitle'>Aprende la postura</h2>
-                <a id='asana-video' href="https://www.youtube.com/watch?v=C7ssrLSheg4&list=RDC7ssrLSheg4&start_radio=1&ab_channel=shakiraVEVO" target='_blank'>¡ Click aquí ! →</a>
-            </div>
+            {
+                isLoading
+                    ?
+                    <LoadingSpinner />
+                    :
+                    <>
+                        <button id='go-back' onClick={() => { setCurrentAsana('') }}>
+                            <img id='back-icon' src={Back} alt={'Go back icon'} />
+                            <span>Volver</span>
+                        </button>
+                        <div id='content'>
+                            <div id="asana-name">
+                                <h1>{name_es}</h1>
+                            </div>
+                            <div id="img-posture">
+                                <img src={image} alt={name_en + ' posture'} />
+                            </div>
+                            <h2 className='subtitle'>Traducciones</h2>
+                            <div id="translations">
+                                <h3>{name_es} · ES</h3>
+                                <h3>{sanskrit} · SKT</h3>
+                                <h3>{name_en} · EN</h3>
+                            </div>
+                            <h2 className='subtitle'>Morfemas</h2>
+                            <div id='morphemes-container'>
+                                {morphemes.map((morpheme, index) => {
+                                    return (
+                                        <div key={index} className='morpheme-container'>
+                                            <p className='morpheme-name'>{morpheme.morfema}</p>
+                                            <p className='morpheme-meaning'>{morpheme.significado_es}</p>
+                                            <p className='morpheme-meaning'>{morpheme.significado_in}</p>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                            <h2 className='subtitle'>Aprende la postura</h2>
+                            <a id='asana-video' href={video} target='_blank'>¡ Click aquí ! →</a>
+                        </div>
+                    </>
+            }
         </>
     )
 }

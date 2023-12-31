@@ -24,7 +24,6 @@
 }
 
 #search-bar button {
-    width: 20%;
     height: 34px;
     color: #FFF;
     font-weight: bold;
@@ -33,6 +32,14 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+#search-bar #search-button {
+    width: 20%;
+}
+
+#search-bar #reset-button {
+    width: 5%;
 }
 
 .green-button:not(:hover) {

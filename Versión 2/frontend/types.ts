@@ -1,10 +1,14 @@
-export interface Morfema {
+export interface MorfemaWithId {
+    id: string;
     morfema: string;
-    significado: string;
+    significado_es: string;
+    significado_in: string;
 }
 
-export interface Morfemas {
-    morfemas: Morfema[];
+export interface Morfema {
+    morfema: string;
+    significado_es: string;
+    significado_in: string;
 }
 
 export interface Asana {
@@ -14,9 +18,4 @@ export interface Asana {
     nombre_in: string;
     imagen: string;
     video: string;
-}
-
-export interface AsanaMorfemas {
-    asana: Asana;
-    morfemas: Morfemas;
 }

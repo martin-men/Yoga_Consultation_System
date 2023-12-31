@@ -1,7 +1,7 @@
 import { Morfema } from '../../types'
 
-export const getMorphemes = async (sanskrit: string) : Promise<Morfema[]> => {
-    const url = `http://localhost:3000/Posturas/info/${sanskrit}`
+export const getMorphemes = async (asanaId: string) : Promise<Morfema[]> => {
+    const url = `http://localhost:3000/morfemas/${asanaId}`
     return fetch(url, {
         method: 'GET',
         headers: {
@@ -13,7 +13,7 @@ export const getMorphemes = async (sanskrit: string) : Promise<Morfema[]> => {
         }
         return response.json()
     }).then(data => {
-        return data[0].asana_completa.morfemas
+        return data
     }).catch(error => {
         console.error('Fetch error:', error)
         throw error

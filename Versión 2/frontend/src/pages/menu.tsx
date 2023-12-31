@@ -3,8 +3,8 @@ import { SearchBar } from "../components/search_bar"
 import '../styles/menu.css'
 import { useGlobalContext } from '../../global_context'
 import { useEffect, useState } from 'react'
-import { getAsanas } from "../services/menu_asanas_service"
-import { Asana } from "../../types"
+import { getAsanas, getMorphemes } from "../services/menu_service"
+import { Asana, MorfemaWithId } from "../../types"
 import { LoadingSpinner } from "../components/loading_spinner"
 import Switch from "react-switch";
 import Yoga from '../assets/icons/yoga.svg'
@@ -12,8 +12,9 @@ import Morphemes from '../assets/icons/morphemes.svg'
 import { Morpheme } from "../components/morpheme"
 
 export function Menu() {
-    const { asanas, setAsanas } = useGlobalContext()
+    const { asanas, setAsanas, morphemes, setMorphemes } = useGlobalContext()
     const [visibleAsanas, setVisibleAsanas] = useState<string[]>([])
+    const [visibleMorphemes, setVisibleMorphemes] = useState<string[]>([])
     const [search, setSearch] = useState<string>('')
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [viewAsanas, setViewAsanas] = useState<boolean>(true)
@@ -34,12 +35,29 @@ export function Menu() {
             }
             setIsLoading(false)
         }
-        // fetchAsanas()
+        const fetchMorphemes = async () => {
+            setIsLoading(true)
+            try {
+                const morphemes = await getMorphemes()
+                const dataMorphemes: { [key: string]: MorfemaWithId } = {}
+                morphemes.forEach((morpheme: MorfemaWithId) => {
+                    dataMorphemes[morpheme.id] = morpheme
+                })
+                setMorphemes(dataMorphemes)
+                setVisibleMorphemes(Object.keys(dataMorphemes))
+            } catch (error) {
+                console.log(error)
+            }
+            setIsLoading(false)
+        }
+        fetchAsanas()
+        fetchMorphemes()
     }, [])
 
     const resetSearch = () => {
         setSearch('')
         setVisibleAsanas(Object.keys(asanas))
+        setVisibleMorphemes(Object.keys(morphemes))
     }
 
     const filterAsanas = () => {
@@ -50,6 +68,19 @@ export function Menu() {
                     asana.nombre_es.replace(/\s/g, '').toLowerCase().includes(search.replace(/\s/g, '').toLowerCase()) ||
                     asana.nombre_in.replace(/\s/g, '').toLowerCase().includes(search.replace(/\s/g, '').toLowerCase()) ||
                     asana.sanscrito.replace(/\s/g, '').toLowerCase().includes(search.replace(/\s/g, '').toLowerCase())
+                )
+            })
+        )
+    }
+
+    const filterMorphemes = () => {
+        setVisibleMorphemes(
+            Object.keys(morphemes).filter((key: string) => {
+                const morpheme: MorfemaWithId = morphemes[key]
+                return (
+                    morpheme.morfema.replace(/\s/g, '').toLowerCase().includes(search.replace(/\s/g, '').toLowerCase()) ||
+                    morpheme.significado_es.replace(/\s/g, '').toLowerCase().includes(search.replace(/\s/g, '').toLowerCase()) ||
+                    morpheme.significado_in.replace(/\s/g, '').toLowerCase().includes(search.replace(/\s/g, '').toLowerCase())
                 )
             })
         )
@@ -67,7 +98,7 @@ export function Menu() {
                             <h1>·Asanas·Learn·</h1>
                             <h2>Posturas · Asanas · Postures</h2>
                             <div id="toggle-switch">
-                                <Switch className="toggle-switch-element" onChange={setViewAsanas} checked={viewAsanas} offHandleColor="#c3a6cd" onHandleColor="#9fcfd3" onColor="#ffffff" offColor="#ffffffaa" checkedIcon={false} uncheckedIcon={false} />
+                                <Switch className="toggle-switch-element" onChange={(value: boolean) => {resetSearch(); setViewAsanas(value);}} checked={viewAsanas} offHandleColor="#c3a6cd" onHandleColor="#9fcfd3" onColor="#ffffff" offColor="#ffffffaa" checkedIcon={false} uncheckedIcon={false} />
                                 {
                                     viewAsanas
                                         ?
@@ -77,7 +108,7 @@ export function Menu() {
                                 }
                             </div>
                             <div id='search-bar'>
-                                <SearchBar search={search} setSearch={setSearch} filterAsanas={filterAsanas} resetSearch={resetSearch} asanasSearch={viewAsanas} />
+                                <SearchBar search={search} setSearch={setSearch} viewAsanas={viewAsanas} filterAsanas={filterAsanas} filterMorphemes={filterMorphemes} resetSearch={resetSearch} asanasSearch={viewAsanas} />
                             </div>
                         </header>
                         {
@@ -88,112 +119,42 @@ export function Menu() {
                                 <p id='morfemas-view'>Morfemas</p>
                         }
                         {
-                            // visibleAsanas.length === 0
-                            //     ?
-                            //     <p id='no-results'>Ninguna coincidencia encontrada</p>
-                            //     :
-                            //     <main id='menu-content'>
-                            //         {
-                            //             visibleAsanas.map((key: string) => {
-                            //                 const asana: Asana = asanas[key]
-                            //                 return (
-                            //                     <div className='menu-content-item' key={key}>
-                            //                         <AsanaPreview asanaID={asana.asanasID} name_es={asana.nombre_es} sanskrit={asana.sanscrito} name_en={asana.nombre_in} image={asana.imagen} />
-                            //                     </div>
-                            //                 )
-                            //             })
-                            //         }
-                            //     </main>
+                            ((visibleAsanas.length === 0) || (visibleMorphemes.length === 0))
+                                ?
+                                <p id='no-results'>Ninguna coincidencia encontrada</p>
+                                :
+                                <main id='menu-content'>
+                                    {
+                                        viewAsanas
+                                            ?
+                                            <>
+                                                {
+                                                    visibleAsanas.map((key: string) => {
+                                                        const asana: Asana = asanas[key]
+                                                        return (
+                                                            <div className='menu-content-item' key={key}>
+                                                                <AsanaPreview asanaID={asana.asanasID} name_es={asana.nombre_es} sanskrit={asana.sanscrito} name_en={asana.nombre_in} image={asana.imagen} />
+                                                            </div>
+                                                        )
+                                                    })
+                                                }
+                                            </>
+                                            :
+                                            <>
+                                                {
+                                                    visibleMorphemes.map((key: string) => {
+                                                        const morpheme: MorfemaWithId = morphemes[key]
+                                                        return (
+                                                            <div className='menu-content-item' key={key}>
+                                                                <Morpheme morfema={morpheme.morfema} es_trans={morpheme.significado_es} en_trans={morpheme.significado_in} />
+                                                            </div>
+                                                        )
+                                                    })
+                                                }
+                                            </>
+                                    }
+                                </main>
                         }
-                        <main id='menu-content'>
-                            {
-                                viewAsanas
-                                    ?
-                                    <>
-                                        <div className='menu-content-item'>
-                                            <AsanaPreview asanaID={"001"} name_es={"Asana 1"} sanskrit={"Asana 1"} name_en={"Asana 1"} image={"https://img.freepik.com/premium-vector/woman-yoga-poses-vector-illustration-cartoon-style_650087-227.jpg?w=2000"} />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <AsanaPreview asanaID={"001"} name_es={"Asana 1"} sanskrit={"Asana 1"} name_en={"Asana 1"} image={"https://img.freepik.com/premium-vector/woman-yoga-poses-vector-illustration-cartoon-style_650087-227.jpg?w=2000"} />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <AsanaPreview asanaID={"001"} name_es={"Asana 1"} sanskrit={"Asana 1"} name_en={"Asana 1"} image={"https://img.freepik.com/premium-vector/woman-yoga-poses-vector-illustration-cartoon-style_650087-227.jpg?w=2000"} />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <AsanaPreview asanaID={"001"} name_es={"Asana 1"} sanskrit={"Asana 1"} name_en={"Asana 1"} image={"https://img.freepik.com/premium-vector/woman-yoga-poses-vector-illustration-cartoon-style_650087-227.jpg?w=2000"} />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <AsanaPreview asanaID={"001"} name_es={"Asana 1"} sanskrit={"Asana 1"} name_en={"Asana 1"} image={"https://img.freepik.com/premium-vector/woman-yoga-poses-vector-illustration-cartoon-style_650087-227.jpg?w=2000"} />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <AsanaPreview asanaID={"001"} name_es={"Asana 1"} sanskrit={"Asana 1"} name_en={"Asana 1"} image={"https://img.freepik.com/premium-vector/woman-yoga-poses-vector-illustration-cartoon-style_650087-227.jpg?w=2000"} />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <AsanaPreview asanaID={"001"} name_es={"Asana 1"} sanskrit={"Asana 1"} name_en={"Asana 1"} image={"https://img.freepik.com/premium-vector/woman-yoga-poses-vector-illustration-cartoon-style_650087-227.jpg?w=2000"} />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <AsanaPreview asanaID={"001"} name_es={"Asana 1"} sanskrit={"Asana 1"} name_en={"Asana 1"} image={"https://img.freepik.com/premium-vector/woman-yoga-poses-vector-illustration-cartoon-style_650087-227.jpg?w=2000"} />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <AsanaPreview asanaID={"001"} name_es={"Asana 1"} sanskrit={"Asana 1"} name_en={"Asana 1"} image={"https://img.freepik.com/premium-vector/woman-yoga-poses-vector-illustration-cartoon-style_650087-227.jpg?w=2000"} />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <AsanaPreview asanaID={"001"} name_es={"Asana 1"} sanskrit={"Asana 1"} name_en={"Asana 1"} image={"https://img.freepik.com/premium-vector/woman-yoga-poses-vector-illustration-cartoon-style_650087-227.jpg?w=2000"} />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <AsanaPreview asanaID={"001"} name_es={"Asana 1"} sanskrit={"Asana 1"} name_en={"Asana 1"} image={"https://img.freepik.com/premium-vector/woman-yoga-poses-vector-illustration-cartoon-style_650087-227.jpg?w=2000"} />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <AsanaPreview asanaID={"001"} name_es={"Asana 1"} sanskrit={"Asana 1"} name_en={"Asana 1"} image={"https://img.freepik.com/premium-vector/woman-yoga-poses-vector-illustration-cartoon-style_650087-227.jpg?w=2000"} />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <AsanaPreview asanaID={"001"} name_es={"Asana 1"} sanskrit={"Asana 1"} name_en={"Asana 1"} image={"https://img.freepik.com/premium-vector/woman-yoga-poses-vector-illustration-cartoon-style_650087-227.jpg?w=2000"} />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <AsanaPreview asanaID={"001"} name_es={"Asana 1"} sanskrit={"Asana 1"} name_en={"Asana 1"} image={"https://img.freepik.com/premium-vector/woman-yoga-poses-vector-illustration-cartoon-style_650087-227.jpg?w=2000"} />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <AsanaPreview asanaID={"001"} name_es={"Asana 1"} sanskrit={"Asana 1"} name_en={"Asana 1"} image={"https://img.freepik.com/premium-vector/woman-yoga-poses-vector-illustration-cartoon-style_650087-227.jpg?w=2000"} />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <AsanaPreview asanaID={"001"} name_es={"Asana 1"} sanskrit={"Asana 1"} name_en={"Asana 1"} image={"https://img.freepik.com/premium-vector/woman-yoga-poses-vector-illustration-cartoon-style_650087-227.jpg?w=2000"} />
-                                        </div>
-                                    </>
-                                    :
-                                    <>
-                                        <div className='menu-content-item'>
-                                            <Morpheme morfema="Superman" es_trans="Super hombre" en_trans="Megaman" />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <Morpheme morfema="Sturdiness" es_trans="Fortaleza" en_trans="Potency" />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <Morpheme morfema="Aeronautics" es_trans="Aeronáutica" en_trans="Airspeed" />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <Morpheme morfema="Heroicism" es_trans="Heroísmo" en_trans="Valiant" />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <Morpheme morfema="Righteousness" es_trans="Rectitud" en_trans="Equity" />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <Morpheme morfema="Cloak" es_trans="Capa" en_trans="Mantle" />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <Morpheme morfema="Kryptonite" es_trans="Kriptonita" en_trans="Krypton" />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <Morpheme morfema="Antagonistic" es_trans="Antagónico" en_trans="Antagonist" />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <Morpheme morfema="Metropolitan" es_trans="Metropolitano" en_trans="Metropolis" />
-                                        </div>
-                                        <div className='menu-content-item'>
-                                            <Morpheme morfema="Salvaging" es_trans="Salvamento" en_trans="Salvation" />
-                                        </div>
-                                    </>
-                            }
-                        </main>
                     </>
             }
         </>
