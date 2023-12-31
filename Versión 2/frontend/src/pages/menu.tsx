@@ -1,6 +1,6 @@
 import { AsanaPreview } from "../components/asana_preview"
 import { SearchBar } from "../components/search_bar"
-import '../styles/menu.css'
+import '../styles/pages/menu.css'
 import { useGlobalContext } from '../../global_context'
 import { useEffect, useState } from 'react'
 import { getAsanas, getMorphemes } from "../services/menu_service"
@@ -50,8 +50,13 @@ export function Menu() {
             }
             setIsLoading(false)
         }
-        fetchAsanas()
-        fetchMorphemes()
+        if (Object.keys(asanas).length === 0 || Object.keys(morphemes).length === 0) {
+            fetchAsanas()
+            fetchMorphemes()
+        } else {
+            setVisibleAsanas(Object.keys(asanas))
+            setVisibleMorphemes(Object.keys(morphemes))
+        }
     }, [])
 
     const resetSearch = () => {
@@ -98,7 +103,7 @@ export function Menu() {
                             <h1>·Asanas·Learn·</h1>
                             <h2>Posturas · Asanas · Postures</h2>
                             <div id="toggle-switch">
-                                <Switch className="toggle-switch-element" onChange={(value: boolean) => {resetSearch(); setViewAsanas(value);}} checked={viewAsanas} offHandleColor="#c3a6cd" onHandleColor="#9fcfd3" onColor="#ffffff" offColor="#ffffffaa" checkedIcon={false} uncheckedIcon={false} />
+                                <Switch className="toggle-switch-element" onChange={(value: boolean) => { resetSearch(); setViewAsanas(value); }} checked={viewAsanas} offHandleColor="#c3a6cd" onHandleColor="#9fcfd3" onColor="#ffffff" offColor="#ffffffaa" checkedIcon={false} uncheckedIcon={false} />
                                 {
                                     viewAsanas
                                         ?

@@ -1,4 +1,4 @@
-import '../styles/asana_preview.css';
+import '../styles/components/asana_preview.css';
 import { useGlobalContext } from '../../global_context.tsx'
 
 type AsanaPreviewProps = {
@@ -9,14 +9,14 @@ type AsanaPreviewProps = {
     image: string;
 }
 
-export function AsanaPreview({ asanaID, name_es, sanskrit, name_en, image } : AsanaPreviewProps) {
+export function AsanaPreview({ asanaID, name_es, sanskrit, name_en, image }: AsanaPreviewProps) {
     const { setCurrentAsana } = useGlobalContext()
-    
+
     return (
-        <div id='preview-container' onClick={ () => { setCurrentAsana(asanaID) } }>
+        <div id='preview-container' onClick={() => { setCurrentAsana(asanaID) }}>
             <img src={image} alt="Asana position image" />
-            <div id="preview-info">
-                <h2>{name_es}</h2>
+            <h2>{name_es}</h2>
+            <div id="asana-translations">
                 <h3>{sanskrit}</h3>
                 <h3>{name_en}</h3>
             </div>

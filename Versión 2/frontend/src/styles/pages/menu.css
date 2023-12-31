@@ -1,6 +1,6 @@
 #header {
     height: 70vw;
-    background-image: url("../assets/imgs/header-background.jpg");
+    background-image: url("../../assets/imgs/header-background.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -42,7 +42,8 @@
     top: calc((20vw - 34px) / 2);
 }
 
-#asanas-view, #morfemas-view {
+#asanas-view,
+#morfemas-view {
     text-align: center;
     margin: 6vh 0 3vh 0;
     font-size: clamp(2rem, 5vw, 3rem);
@@ -71,7 +72,7 @@
     padding: 1.5vh 0;
 }
 
-.menu-content-item{
+.menu-content-item {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,7 +80,8 @@
 }
 
 #no-results {
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 5vw, 3rem);
+    ;
     text-align: center;
     color: #000;
     font-weight: bold;

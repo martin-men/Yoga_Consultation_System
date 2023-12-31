@@ -39,7 +39,7 @@
 }
 
 #search-bar #reset-button {
-    width: 5%;
+    width: 20%;
 }
 
 .green-button:not(:hover) {
@@ -94,9 +94,13 @@
         width: 30px;
         height: 30px;
     }
-    
+
     #search-bar #reset-button img {
         width: 30px;
         height: 25px;
+    }
+
+    #search-bar #reset-button {
+        width: 10%;
     }
 }

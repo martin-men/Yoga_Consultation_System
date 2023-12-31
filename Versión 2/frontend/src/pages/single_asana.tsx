@@ -2,7 +2,7 @@ import { useGlobalContext } from '../../global_context.tsx'
 import { getMorphemes } from "../services/single_asana_service.ts"
 import { useEffect, useState } from "react"
 import { Morfema } from "../../types.ts"
-import '../styles/single_asana.css'
+import '../styles/pages/single_asana.css'
 import Back from '../assets/icons/back.svg'
 import { LoadingSpinner } from '../components/loading_spinner.tsx'
 
@@ -67,8 +67,8 @@ export function SingleAsana({ id, name_es, sanskrit, name_en, image, video }: Si
                                     return (
                                         <div key={index} className='morpheme-container'>
                                             <p className='morpheme-name'>{morpheme.morfema}</p>
-                                            <p className='morpheme-meaning'>{morpheme.significado_es}</p>
-                                            <p className='morpheme-meaning'>{morpheme.significado_in}</p>
+                                            <p className='morpheme-meaning'>ES → {morpheme.significado_es}</p>
+                                            <p className='morpheme-meaning'>EN → {morpheme.significado_in}</p>
                                         </div>
                                     )
                                 })}

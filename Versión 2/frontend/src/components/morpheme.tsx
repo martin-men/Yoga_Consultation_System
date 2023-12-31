@@ -1,5 +1,4 @@
-import { useGlobalContext } from "../../global_context";
-import '../styles/morpheme.css'
+import '../styles/components/morpheme.css'
 
 type MorphemeProps = {
     morfema: string;
@@ -7,7 +6,7 @@ type MorphemeProps = {
     en_trans: string;
 }
 
-export function Morpheme({morfema, es_trans, en_trans}: MorphemeProps) {
+export function Morpheme({ morfema, es_trans, en_trans }: MorphemeProps) {
     return (
         <div id='container'>
             <h3>{morfema} · SKT</h3>
