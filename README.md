@@ -36,7 +36,7 @@ Para visualizar la información completa de una postura deseada tendremos la vis
 
 ## Documentación última versión: Versión 2.0
 
-<a href ="https://epnecuador-my.sharepoint.com/personal/daniela_colcha_epn_edu_ec/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fdaniela%5Fcolcha%5Fepn%5Fedu%5Fec%2FDocuments%2FSEMESTRE%5FVI%2FCalidad%20de%20Software%2FDocumentaci%C3%B3n%2DAsanasLearn2%2E0%2DCodity&ga=1" target = "_blank"> <img src="https://img.shields.io/badge/OneDrive-0078D4.svg?style=for-the-badge&logo=microsoftonedrive&logoColor=white" alt="OneDrive Logo" width="100px" /></a>
+<a href ="https://epnecuador-my.sharepoint.com/:f:/g/personal/daniela_colcha_epn_edu_ec/Et7X33SoYd9KumIv6A5I_2MB1OmIbFifWWfbyja1I5f1cQ?e=K2kW7R" target = "_blank"> <img src="https://img.shields.io/badge/OneDrive-0078D4.svg?style=for-the-badge&logo=microsoftonedrive&logoColor=white" alt="OneDrive Logo" width="100px" /></a>
 
 ## Información versiones anteriores 
 <table>
