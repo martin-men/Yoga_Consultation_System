@@ -2,8 +2,8 @@
 ## Contenido
 * [Introducción](#Asanas-Posturas-Postures)
 * [Vista previa](#Vista-previa-última-versión)
-* [Documentación](#Documentación-última-versión:-Versión-2.0)
-* [Información versiones anteriores](#Versión-1.0)
+* [Documentación](#Documentación-última-versión-Versión-20)
+* [Información versiones anteriores](#Versión-10)
 
 ## Asanas-Posturas-Postures
 
