@@ -1,9 +1,11 @@
+
 # Yoga_Consultation_System
 ## Contenido
 * [Introducción](#Asanas-Posturas-Postures)
 * [Vista previa](#Vista-previa-última-versión)
 * [Documentación](#Documentación-última-versión-Versión-20)
-* [Información versiones anteriores](#Versión-10)
+* [Información versiones anteriores](#Información-versiones-anteriores)
+* [Autores](#autores)
 
 ## Asanas-Posturas-Postures
 
@@ -36,9 +38,26 @@ Para visualizar la información completa de una postura deseada tendremos la vis
 
 <a href ="https://epnecuador-my.sharepoint.com/personal/daniela_colcha_epn_edu_ec/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fdaniela%5Fcolcha%5Fepn%5Fedu%5Fec%2FDocuments%2FSEMESTRE%5FVI%2FCalidad%20de%20Software%2FDocumentaci%C3%B3n%2DAsanasLearn2%2E0%2DCodity&ga=1" target = "_blank"> <img src="https://img.shields.io/badge/OneDrive-0078D4.svg?style=for-the-badge&logo=microsoftonedrive&logoColor=white" alt="OneDrive Logo" width="100px" /></a>
 
-## Versión 1.0
-Documentación: 
-<a href ="https://epnecuador-my.sharepoint.com/:f:/g/personal/daniela_colcha_epn_edu_ec/EvPd7gzswMRLocOVMuuNyl8Bbo8Ij2Dibcd7jtv1R8tHmQ?e=obOxiJ" target = "_blank"> <img src="https://img.shields.io/badge/OneDrive-0078D4.svg?style=for-the-badge&logo=microsoftonedrive&logoColor=white" alt="OneDrive Logo" width="100px" /></a>
-</hr>
-Imágenes de vista previa <a href = "https://github.com/martin-men/Yoga_Consultation_System/tree/5aebcde0b2f1d6c2d51de5d3a39c1e435e35193b/Resources-Doc/Vista-Versi%C3%B3n1">📂 clic aquí.</a>
+## Información versiones anteriores 
+<table>
+    <thead>
+        <tr>
+            <th>Versión</th>
+            <th>Documentación</th>
+            <th>Vista Previa</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="center"><strong>1.0</strong></td>
+            <td align="center"><a href ="https://epnecuador-my.sharepoint.com/:f:/g/personal/daniela_colcha_epn_edu_ec/EvPd7gzswMRLocOVMuuNyl8Bbo8Ij2Dibcd7jtv1R8tHmQ?e=obOxiJ" target = "_blank"> <img src="https://img.shields.io/badge/OneDrive-0078D4.svg?style=for-the-badge&logo=microsoftonedrive&logoColor=white" alt="OneDrive Logo" width="100px" /></a></td>
+            <td align="center"><a href = "https://github.com/martin-men/Yoga_Consultation_System/tree/5aebcde0b2f1d6c2d51de5d3a39c1e435e35193b/Resources-Doc/Vista-Versi%C3%B3n1"> 📂 </a> </td>
+        </tr>
+</table>
 
+# Autores
+
+| [<img src="https://avatars.githubusercontent.com/u/102121965?v=4" width=115><br><sub>Alejandra Colcha</sub>](https://github.com/DaColcha) |  [<img src="https://avatars.githubusercontent.com/u/143550175?v=4" width=115><br><sub>Luis de la Cruz</sub>](https://github.com/LuLesDLC) |  [<img src="https://avatars.githubusercontent.com/u/104182598?v=4" width=115><br><sub>Martín Mendieta</sub>](https://github.com/martin-men) | [<img src="https://avatars.githubusercontent.com/u/133171706?v=4" width=115><br><sub>Christopher Zambrano</sub>](https://github.com/Chrisathan12) | [<img src="https://avatars.githubusercontent.com/u/120787560?v=4" width=115><br><sub>Dario Charro</sub>](https://github.com/DarioJ14) |
+| :---: | :---: | :---: | :---: | :---: |
+
+<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/bb5b17e76042b82840d358d33f6dfb6657b671cd/Resources-Doc/logo.png" alt ="Información Asana" width ="500px">
