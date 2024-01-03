@@ -66,29 +66,33 @@ export function Menu() {
     }
 
     const filterAsanas = () => {
-        setVisibleAsanas(
-            Object.keys(asanas).filter((key: string) => {
-                const asana: Asana = asanas[key]
-                return (
-                    asana.nombre_es.replace(/\s/g, '').toLowerCase().includes(search.replace(/\s/g, '').toLowerCase()) ||
-                    asana.nombre_in.replace(/\s/g, '').toLowerCase().includes(search.replace(/\s/g, '').toLowerCase()) ||
-                    asana.sanscrito.replace(/\s/g, '').toLowerCase().includes(search.replace(/\s/g, '').toLowerCase())
-                )
-            })
-        )
+        const tempVisibleAsanas = Object.keys(asanas).filter((key: string) => {
+            const asana: Asana = asanas[key]
+            return (
+                asana.nombre_es.replace(/\s/g, '').toLowerCase().includes(search.replace(/\s/g, '').toLowerCase()) ||
+                asana.nombre_in.replace(/\s/g, '').toLowerCase().includes(search.replace(/\s/g, '').toLowerCase()) ||
+                asana.sanscrito.replace(/\s/g, '').toLowerCase().includes(search.replace(/\s/g, '').toLowerCase())
+            )
+        })
+        setVisibleAsanas(tempVisibleAsanas)
+        if (tempVisibleAsanas.length === 0) {
+            setSearch('')
+        }
     }
 
     const filterMorphemes = () => {
-        setVisibleMorphemes(
-            Object.keys(morphemes).filter((key: string) => {
-                const morpheme: MorfemaWithId = morphemes[key]
-                return (
-                    morpheme.morfema.replace(/\s/g, '').toLowerCase().includes(search.replace(/\s/g, '').toLowerCase()) ||
-                    morpheme.significado_es.replace(/\s/g, '').toLowerCase().includes(search.replace(/\s/g, '').toLowerCase()) ||
-                    morpheme.significado_in.replace(/\s/g, '').toLowerCase().includes(search.replace(/\s/g, '').toLowerCase())
-                )
-            })
-        )
+        const tempVisibleMorphemes = Object.keys(morphemes).filter((key: string) => {
+            const morpheme: MorfemaWithId = morphemes[key]
+            return (
+                morpheme.morfema.replace(/\s/g, '').toLowerCase().includes(search.replace(/\s/g, '').toLowerCase()) ||
+                morpheme.significado_es.replace(/\s/g, '').toLowerCase().includes(search.replace(/\s/g, '').toLowerCase()) ||
+                morpheme.significado_in.replace(/\s/g, '').toLowerCase().includes(search.replace(/\s/g, '').toLowerCase())
+            )
+        })
+        setVisibleMorphemes(tempVisibleMorphemes)
+        if (tempVisibleMorphemes.length === 0) {
+            setSearch('')
+        }
     }
 
     return (
