@@ -22,11 +22,26 @@ async function consult_morfemas() {
 async function consult_morfemas_asana(asanaID) {
     try {
         // ejecución del query para obtener los morfemas asociados
-        const morfemas = await prisma.$queryRaw `
-                                        SELECT m.morfema, m.significado_es, m.significado_in
-                                        FROM morfemas m
-                                        JOIN decomposition d ON m.id = d.morfema
-                                        WHERE d.asana = ${asanaID};`;
+        const decompositions = await prisma.decomposition.findMany({
+            where: {
+                asana: asanaID,
+            },
+            select: {
+                morfema: true, // Incluye la relación con morfemas
+            },
+        });
+        const ids = [...new Set(decompositions.map((item) => item.morfema))];
+        const morfemas = await prisma.morfemas.findMany({
+            where: {
+                id: { in: ids,
+                },
+            },
+            select: {
+                morfema: true,
+                significado_es: true,
+                significado_in: true,
+            },
+        });
 
         //modificación de las posiciones de morfemas si asana es el primer morfema
         if (morfemas[0].morfema == 'Asana') {
@@ -39,6 +54,7 @@ async function consult_morfemas_asana(asanaID) {
         return morfemas;
         // control de excepciones
     } catch (error) {
+        console.log(error);
         return { error: error };
     } finally {
         await prisma.$disconnect();
