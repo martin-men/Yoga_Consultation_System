@@ -6,7 +6,7 @@
 
     },
 
-    "type": "module",
+    "type": "commonjs",
     "dependencies": {
         "@prisma/client": "^5.6.0",
         "cors": "^2.8.5",
