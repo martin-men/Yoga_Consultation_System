@@ -1,8 +1,8 @@
 //importación de librerías necesarias y routers
 import express from "express";
 import cors from "cors";
-import router_asanas from "./src/asanas/routers.js";
-import router_morfemas from "./src/morfemas/routers.js";
+import router_asanas from "./asanas/routers.js";
+import router_morfemas from "./morfemas/routers.js";
 
 //creamos el objeto tipo express
 const app = express();
