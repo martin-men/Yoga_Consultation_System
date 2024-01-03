@@ -13,8 +13,8 @@ Como instructores de Yoga, es fundamental conocer los nombres de las posturas qu
 
 Todo esto en conjunto con una interfaz gráfica que simula tarjetas de memoria para facilitar el uso y aprendizaje por parte de los usuarios. 
 
-## Vista previa última versión
-
+### Página funcional: <a href ="https://asanas-learn.000webhostapp.com/" target = "_blank"><img src="https://img.shields.io/badge/Clic%20Aqu%C3%AD-blue?style=flat" alt="Clic Aquí" /></a>
+## Vista previa última versión 
 Una vez iniciada la aplicación, esta será la primera pantala que visualizaremos. 
 </hr>
 <img src="https://github.com/martin-men/Yoga_Consultation_System/blob/5aebcde0b2f1d6c2d51de5d3a39c1e435e35193b/Resources-Doc/Vista-Versi%C3%B3n2/inicio-asanas.png" alt ="Inicio Aplicación" width ="750px">
