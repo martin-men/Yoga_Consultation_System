@@ -107,6 +107,7 @@ export function Menu() {
                             <h1>·Asanas·Learn·</h1>
                             <h2>Posturas · Asanas · Postures</h2>
                             <div id="toggle-switch">
+                                <span>Busca por {viewAsanas ? "Morfemas" : "Asanas"}</span>
                                 <Switch className="toggle-switch-element" onChange={(value: boolean) => { resetSearch(); setViewAsanas(value); }} checked={viewAsanas} offHandleColor="#c3a6cd" onHandleColor="#9fcfd3" onColor="#ffffff" offColor="#ffffffaa" checkedIcon={false} uncheckedIcon={false} />
                                 {
                                     viewAsanas
