@@ -1,7 +1,7 @@
 import { Asana, MorfemaWithId } from "../../types";
 
 export const getAsanas = async (): Promise<Asana[]> => {
-  const url = "http://localhost:3000/Posturas";
+  const url = "https://prueba-deployar.vercel.app/Posturas";
   return fetch(url, {
     method: "GET",
     headers: {
@@ -24,7 +24,7 @@ export const getAsanas = async (): Promise<Asana[]> => {
 };
 
 export const getMorphemes = async (): Promise<MorfemaWithId[]> => {
-  const url = "http://localhost:3000/morfemas";
+  const url = "https://prueba-deployar.vercel.app/morfemas";
   return fetch(url, {
     method: "GET",
     headers: {
