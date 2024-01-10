@@ -133,7 +133,7 @@ export function Menu() {
                                 ?
                                 <p id='no-results'>Ninguna coincidencia encontrada</p>
                                 :
-                                <main id='menu-content'>
+                                <main id='menu-content' tabIndex={0}>
                                     {
                                         viewAsanas
                                             ?
