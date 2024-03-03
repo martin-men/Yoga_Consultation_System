@@ -1,0 +1,116 @@
+#preview-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    box-shadow: 5px 5px 15px 0px #00000099;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+#preview-container:hover {
+    background-color: #149b9c00;
+    transition: 0.5s;
+}
+
+#preview-container:not(:hover) {
+    background-color: #149b9c15;
+    transition: 0.5s;
+}
+
+#preview-container img {
+    position: absolute;
+    z-index: -1;
+    object-fit: cover;
+    object-position: center;
+}
+
+#preview-container:hover img {
+    height: 45%;
+    border-radius: 50%;
+    border: 1px solid #149b9c;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#preview-container:not(:hover) img {
+    height: 100%;
+    border-radius: 0;
+    border: 0px solid #149b9c00;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+#preview-container h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-shadow: 2px 2px 2px #FFF;
+    color: #149b9c;
+    transition: all 0.5s;
+}
+
+#preview-container:hover h2 {
+    font-size: 1rem;
+    transform: translate(0, -75px);
+}
+
+#preview-container:not(:hover) h2 {
+    font-size: 1.2rem;
+    transform: translate(0, 0px);
+}
+
+#preview-container h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    color: #444;
+    text-align: center;
+    text-shadow: 2px 2px 2px #FFF;
+    transition: all 0.5s;
+}
+
+#preview-container:hover #asana-translations {
+    transform: translate(0, 75px);
+    transition: all 0.5s;
+}
+
+#preview-container:not(:hover) #asana-translations {
+    transform: translate(0, 0px);
+    transition: all 0.5s;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#preview-container::-webkit-scrollbar {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    #preview-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    #preview-container:hover img {
+        height: 50%;
+    }
+
+    #preview-container:hover h2 {
+        font-size: 1rem;
+        transform: translate(0, -95px);
+    }
+
+    #preview-container:hover #asana-translations {
+        transform: translate(0, 95px);
+        transition: all 0.5s;
+    }
+}

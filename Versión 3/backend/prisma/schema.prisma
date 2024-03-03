@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model asanas {
+  asanasID  String @id @db.Char(5)
+  nombre_es String @db.Text
+  sanscrito String @db.Text
+  nombre_in String @db.Text
+  imagen    String @db.Text
+  video     String @db.Text
+}
+
+model decomposition {
+  decomID String @id @db.Char(3)
+  asana   String @db.Char(5)
+  morfema String @db.Char(2)
+
+  @@index([asana], map: "FK_decom_asana_idx")
+  @@index([morfema], map: "FK_demo_morfema_idx")
+}
+
+model morfemas {
+  id             String @id @db.Char(2)
+  morfema        String @db.Text
+  significado_es String @db.Text
+  significado_in String @db.Text
+}
