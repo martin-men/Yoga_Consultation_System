@@ -55,7 +55,6 @@
     right: 0;
     z-index: 1;
     animation: asana-name-scroll linear;
-    animation-timeline: scroll();
 }
 
 @keyframes asana-name-scroll {

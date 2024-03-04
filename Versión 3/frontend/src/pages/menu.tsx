@@ -127,9 +127,9 @@ export function Menu() {
                         {
                             viewAsanas
                                 ?
-                                <p id='asanas-view'>Asanas</p>
+                                <h2 id='asanas-view'>Asanas</h2>
                                 :
-                                <p id='morfemas-view'>Morfemas</p>
+                                <h2 id='morfemas-view'>Morfemas</h2>
                         }
                         <button onClick={() => setShowCreateAsana(true)}>Crear Asana</button>
                         {
