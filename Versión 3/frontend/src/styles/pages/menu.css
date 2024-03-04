@@ -1,5 +1,5 @@
 #header {
-    height: 70vw;
+    height: 40vh;
     background-image: url("../../assets/imgs/header-background.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     position: sticky;
-    top: -50vw;
+    top: -30vh;
     z-index: 10;
 }
 
@@ -20,12 +20,12 @@
     margin: 0 -3vw 0 0;
     padding: 0;
     letter-spacing: 3vw;
-    font-size: clamp(2rem, 10vw, 6rem);
+    font-size: clamp(2rem, 5vw, 6rem);
 }
 
 #header h2 {
     margin: 0;
-    font-size: clamp(1.4rem, 5vw, 3rem);
+    font-size: clamp(1.4rem, 2vw, 3rem);
 }
 
 #toggle-switch {
@@ -46,7 +46,7 @@
 #search-bar {
     margin: 0 4vw;
     position: sticky;
-    top: calc((20vw - 34px) / 2);
+    top: calc((10vh - 34px) / 2);
 }
 
 #asanas-view,
@@ -88,7 +88,6 @@
 
 #no-results {
     font-size: clamp(1.2rem, 5vw, 3rem);
-    ;
     text-align: center;
     color: #000;
     font-weight: bold;
@@ -96,15 +95,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-    #header {
-        height: 38vw;
-        top: -28vw;
-    }
-
-    #search-bar {
-        top: calc((10vw - 54px) / 2);
-    }
-
     .menu-content-item {
         margin: 1.5vh 1.5vw;
     }

@@ -10,6 +10,7 @@ import Switch from "react-switch";
 import Yoga from '../assets/icons/yoga.svg'
 import Morphemes from '../assets/icons/morphemes.svg'
 import { Morpheme } from "../components/morpheme"
+import { CreateAsana } from "../components/create_asana"
 
 export function Menu() {
     const { asanas, setAsanas, morphemes, setMorphemes } = useGlobalContext()
@@ -18,6 +19,7 @@ export function Menu() {
     const [search, setSearch] = useState<string>('')
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [viewAsanas, setViewAsanas] = useState<boolean>(true)
+    const [showCreateAsana, setShowCreateAsana] = useState<boolean>(false)
 
     useEffect(() => {
         const fetchAsanas = async () => {
@@ -35,6 +37,7 @@ export function Menu() {
             }
             setIsLoading(false)
         }
+
         const fetchMorphemes = async () => {
             setIsLoading(true)
             try {
@@ -127,6 +130,14 @@ export function Menu() {
                                 <p id='asanas-view'>Asanas</p>
                                 :
                                 <p id='morfemas-view'>Morfemas</p>
+                        }
+                        <button onClick={() => setShowCreateAsana(true)}>Crear Asana</button>
+                        {
+                            showCreateAsana
+                                ?
+                                <CreateAsana setShowCreateAsana={setShowCreateAsana} morphemes={morphemes} />
+                                :
+                                <></>
                         }
                         {
                             ((visibleAsanas.length === 0) || (visibleMorphemes.length === 0))
