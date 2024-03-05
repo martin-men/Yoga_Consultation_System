@@ -2,7 +2,7 @@
 # Yoga_Consultation_System
 ## Contenido
 * [Introducción](#Asanas-Posturas-Postures)
-* [Vista previa](#Vista-previa-última-versión)
+* [Manual de usuario](#Vista-previa-última-versión)
 * [Documentación](#Documentación-última-versión-Versión-20)
 * [Información versiones anteriores](#Información-versiones-anteriores)
 * [Autores](#autores)
@@ -34,9 +34,9 @@ Para visualizar la información completa de una postura deseada tendremos la vis
 <img src="https://github.com/martin-men/Yoga_Consultation_System/blob/5aebcde0b2f1d6c2d51de5d3a39c1e435e35193b/Resources-Doc/Vista-Versi%C3%B3n2/asana.png" alt ="Información Asana" width ="750px">
 
 
-## Documentación última versión: Versión 2.0
+## Documentación última versión: Versión 3.0
 
-<a href ="https://epnecuador-my.sharepoint.com/:f:/g/personal/daniela_colcha_epn_edu_ec/Et7X33SoYd9KumIv6A5I_2MB1OmIbFifWWfbyja1I5f1cQ?e=K2kW7R" target = "_blank"> <img src="https://img.shields.io/badge/OneDrive-0078D4.svg?style=for-the-badge&logo=microsoftonedrive&logoColor=white" alt="OneDrive Logo" width="100px" /></a>
+<a href ="https://epnecuador-my.sharepoint.com/:f:/g/personal/daniela_colcha_epn_edu_ec/Er6dTfNoMMlPgQTiqbkdq78BI39By4u_T3uDPvX4_difOw?e=9Pndtk" target = "_blank"> <img src="https://img.shields.io/badge/OneDrive-0078D4.svg?style=for-the-badge&logo=microsoftonedrive&logoColor=white" alt="OneDrive Logo" width="100px" /></a>
 
 ## Información versiones anteriores 
 <table>
@@ -51,6 +51,11 @@ Para visualizar la información completa de una postura deseada tendremos la vis
         <tr>
             <td align="center"><strong>1.0</strong></td>
             <td align="center"><a href ="https://epnecuador-my.sharepoint.com/:f:/g/personal/daniela_colcha_epn_edu_ec/EvPd7gzswMRLocOVMuuNyl8Bbo8Ij2Dibcd7jtv1R8tHmQ?e=obOxiJ" target = "_blank"> <img src="https://img.shields.io/badge/OneDrive-0078D4.svg?style=for-the-badge&logo=microsoftonedrive&logoColor=white" alt="OneDrive Logo" width="100px" /></a></td>
+            <td align="center"><a href = "https://github.com/martin-men/Yoga_Consultation_System/tree/5aebcde0b2f1d6c2d51de5d3a39c1e435e35193b/Resources-Doc/Vista-Versi%C3%B3n1"> 📂 </a> </td>
+        </tr>
+        <tr>
+            <td align="center"><strong>2.0</strong></td>
+            <td align="center"><a href ="https://epnecuador-my.sharepoint.com/:f:/g/personal/daniela_colcha_epn_edu_ec/Et7X33SoYd9KumIv6A5I_2MB1OmIbFifWWfbyja1I5f1cQ?e=K2kW7R" target = "_blank"> <img src="https://img.shields.io/badge/OneDrive-0078D4.svg?style=for-the-badge&logo=microsoftonedrive&logoColor=white" alt="OneDrive Logo" width="100px" /></a></td>
             <td align="center"><a href = "https://github.com/martin-men/Yoga_Consultation_System/tree/5aebcde0b2f1d6c2d51de5d3a39c1e435e35193b/Resources-Doc/Vista-Versi%C3%B3n1"> 📂 </a> </td>
         </tr>
 </table>
