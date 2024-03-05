@@ -136,7 +136,7 @@
     transition: 0.4s;
 }
 
-.morpheme-container:not(hover) {
+.morpheme-container:not(:hover) {
     background-color: #c2a7cd99;
     transition: 0.4s;
 }
@@ -151,7 +151,6 @@
 
 .morpheme-meaning {
     font-size: clamp(1rem, 1.5vw, 3rem);
-    margin-bottom: 0;
     text-shadow: 0.3px 0.3px 0.3px #000000;
     margin: 0;
 }
