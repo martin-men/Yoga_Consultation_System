@@ -10,7 +10,6 @@ import Switch from "react-switch";
 import Yoga from '../assets/icons/yoga.svg'
 import Morphemes from '../assets/icons/morphemes.svg'
 import { Morpheme } from "../components/morpheme"
-import { CreateAsana } from "../components/create_asana"
 
 export function Menu() {
     const { asanas, setAsanas, morphemes, setMorphemes } = useGlobalContext()
