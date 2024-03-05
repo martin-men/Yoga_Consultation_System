@@ -1,8 +1,7 @@
 import { Morfema } from "../../types";
 
 export const getMorphemes = async (asanaId: string): Promise<Morfema[]> => {
-  // const url = `https://yoga-consultation-system.vercel.app/morfemas/${asanaId}`;
-  const url = `http://localhost:3000/morfemas/${asanaId}`;
+  const url = `https://asanar-learnig.vercel.app/morfemas/${asanaId}`;
   return fetch(url, {
     method: "GET",
     headers: {

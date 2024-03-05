@@ -44,7 +44,10 @@
 }
 
 #search-bar {
-    margin: 0 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
     position: sticky;
     top: calc((10vh - 34px) / 2);
 }
