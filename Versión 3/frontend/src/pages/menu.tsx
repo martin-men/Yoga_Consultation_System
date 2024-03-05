@@ -19,7 +19,6 @@ export function Menu() {
     const [search, setSearch] = useState<string>('')
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [viewAsanas, setViewAsanas] = useState<boolean>(true)
-    const [showCreateAsana, setShowCreateAsana] = useState<boolean>(false)
 
     useEffect(() => {
         const fetchAsanas = async () => {
@@ -130,14 +129,6 @@ export function Menu() {
                                 <h2 id='asanas-view'>Asanas</h2>
                                 :
                                 <h2 id='morfemas-view'>Morfemas</h2>
-                        }
-                        <button onClick={() => setShowCreateAsana(true)}>Crear Asana</button>
-                        {
-                            showCreateAsana
-                                ?
-                                <CreateAsana setShowCreateAsana={setShowCreateAsana} morphemes={morphemes} />
-                                :
-                                <></>
                         }
                         {
                             ((visibleAsanas.length === 0) || (visibleMorphemes.length === 0))
