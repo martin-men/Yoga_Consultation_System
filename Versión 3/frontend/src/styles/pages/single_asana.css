@@ -1,3 +1,7 @@
+#single-asana-header {
+    display: flex;
+}
+
 #go-back {
     display: flex;
     align-items: center;
@@ -35,13 +39,6 @@
     height: calc(20px + 1.5vw);
 }
 
-#content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 #asana-name {
     box-sizing: border-box;
     background-color: #2A798055;
@@ -50,24 +47,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    animation: asana-name-scroll linear;
 }
 
-@keyframes asana-name-scroll {
-    80% {
-        width: 100%;
-    }
-
-    100% {
-        width: 100%;
-    }
-}
-
-#content h1 {
+#single-asana-header h1 {
     font-size: clamp(1.5rem, 4vw, 5rem);
     text-align: center;
     color: #FFF;
@@ -75,6 +57,13 @@
     font-family: 'Cormorant Garamond', serif;
     margin: 0;
     padding: 0;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #img-posture {
@@ -130,12 +119,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5vw;
     flex-wrap: wrap;
     margin-bottom: 5vh;
 }
 
 .morpheme-container {
+    margin: 1.5vw 1.5vw;
     padding: 15px;
     box-shadow: 1px 4px 5px 0px #00000099;
     text-align: center;
@@ -168,28 +157,12 @@
 }
 
 #asana-video {
-    text-decoration: none;
-    font-size: clamp(1.5rem, 2.5vw, 6rem);
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFF;
-    height: calc(50px + 3vw);
-    padding: 0 5%;
-    margin-bottom: 5vh;
-}
-
-#asana-video:hover {
-    background-color: #2A7980BB;
-    border: 2px solid #fff;
-    transition: 0.4s;
-}
-
-#asana-video:not(:hover) {
-    background-color: #2A7980;
-    border: 2px solid #2A7980;
-    transition: 0.4s;
+    width: 70vw;
+    height: 39vw;
+    border: none;
+    margin: 0 0 50px 0;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px 0px #00000099;
 }
 
 @media only screen and (min-width: 768px) {

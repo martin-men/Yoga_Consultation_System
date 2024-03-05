@@ -6,7 +6,8 @@ const router_morfemas = require("./morfemas/routers.js");
 
 
 let corsOptions = {
-  origin: 'https://asanas-learn.000webhostapp.com/' // Compliant
+  origin: ['https://asanas-learn.000webhostapp.com/', 'http://localhost:8000'] // Compliant
+
 };
 
 // Creamos el objeto tipo express

@@ -44,14 +44,16 @@ export function SingleAsana({ id, name_es, sanskrit, name_en, image, video }: Si
                     <LoadingSpinner />
                     :
                     <>
-                        <button id='go-back' onClick={() => { setCurrentAsana('') }}>
-                            <img id='back-icon' src={Back} alt={'Go back icon'} />
-                            <span>Volver</span>
-                        </button>
-                        <div id='content'>
+                        <div id='single-asana-header'>
+                            <button id='go-back' onClick={() => { setCurrentAsana('') }}>
+                                <img id='back-icon' src={Back} alt={'Go back icon'} />
+                                <span>Volver</span>
+                            </button>
                             <div id="asana-name">
                                 <h1>{name_es}</h1>
                             </div>
+                        </div>
+                        <div id='content'>
                             <div id="img-posture">
                                 <img src={image} alt={name_en + ' posture'} />
                             </div>
@@ -74,7 +76,9 @@ export function SingleAsana({ id, name_es, sanskrit, name_en, image, video }: Si
                                 })}
                             </div>
                             <h2 className='subtitle'>Aprende la postura</h2>
-                            <a id='asana-video' href={video} target='_blank'>¡ Click aquí ! →</a>
+                            <iframe id='asana-video' src={video}
+                                title="YouTube video player"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                         </div>
                     </>
             }
