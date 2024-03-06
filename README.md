@@ -20,20 +20,18 @@ Todo esto en conjunto con una interfaz gráfica que simula tarjetas de memoria p
 ### 1. Sección ASANAS
 Una vez iniciada la aplicación, esta será la primera pantala que visualizaremos. 
 </hr>
-<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/Inicio.png" alt ="Inicio Aplicación" width ="500px">
+<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/Inicio.png" alt ="Inicio Aplicación" width ="600px">
 
 Utiliza la barra de búsqueda para encontrar una asana ya sea por su nombre completo o una parte del mismo. La búsqueda puede ser en inglés, español o sánscrito. 
-<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/Buscar.png" alt ="Boton buscar" width ="200px">
+Presiona el botón: <img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/Buscar.png" alt ="Boton buscar" width ="80px">
 </hr>
-<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/8a077b61535682380a54475d3fadf77e9c018898/Resources-Doc/Vista-Versi%C3%B3n3/Busqueda.png" alt ="Busqueda" width ="500px">
+<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/8a077b61535682380a54475d3fadf77e9c018898/Resources-Doc/Vista-Versi%C3%B3n3/Busqueda.png" alt ="Busqueda" width ="600px">
 
-Si deseas iniciar una nueva búsqueda desde cero, utiliza el botón de limpiar para borrar tu última búsqueda.
-</hr>
-<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/Limpiar.png" alt ="Boton limpiar" width ="200px">
+Si deseas iniciar una nueva búsqueda desde cero, utiliza el botón de limpiar para borrar tu última búsqueda. <img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/Limpiar.png" alt ="Boton limpiar" width ="80px">
 
 Para visualizar la información completa de una postura en específico, después de dar clic en ella tendremos la siguiente vista. Al final de esta vista estará el video que te indicará como ejecutar la postura.
 </hr>
-<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/e39c45faef1574fc6665f672ecc5498b645905b0/Resources-Doc/Vista-Versi%C3%B3n3/VistaPostura.png" alt ="Información Asana" width ="500px">
+<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/e39c45faef1574fc6665f672ecc5498b645905b0/Resources-Doc/Vista-Versi%C3%B3n3/VistaPostura.png" alt ="Información Asana" width ="600px">
 
 ### 2. Sección MORFEMAS
 Ahora, utiliza el ícono de switch para trasladarte a la sección de diccionario de morfemas.
@@ -42,15 +40,15 @@ Ahora, utiliza el ícono de switch para trasladarte a la sección de diccionario
 
 Esta es la pantalla que visualizarás al cambiar a la sección de morfemas
 </hr>
-<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/MorfemasInicio.png" alt ="Inicio Morfemas" width ="500px">
+<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/MorfemasInicio.png" alt ="Inicio Morfemas" width ="600px">
 
 Al igual que en la sección de asanas, puedes utilizar la barra de búsqueda para encontrar morfemas específicos. Se tienen los mismos botones con la misma funcionalidad y la búsqueda tambien puede realizarse en cualquiera de los idiomas disponibles.
 </hr>
-<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/BuscarMorfema.png" alt ="Búsqueda de Morfemas" width ="750px">
+<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/BuscarMorfema.png" alt ="Búsqueda de Morfemas" width ="600px">
 
 Si deseas hacer énfasis en algún morfema específico, pasa el mouse por encima y se acenturán los colores
 </hr>
-<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/Vista%20Morfema.png" alt ="Vista Morfema" width ="400px">
+<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/Vista%20Morfema.png" alt ="Vista Morfema" width ="250px">
 
 ## Documentación última versión: Versión 3.0
 
