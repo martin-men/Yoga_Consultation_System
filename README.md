@@ -2,7 +2,7 @@
 # Yoga_Consultation_System
 ## Contenido
 * [Introducción](#Asanas-Posturas-Postures)
-* [Manual de usuario](#Vista-previa-última-versión)
+* [Manual de usuario](#¿cómo-usarla)
 * [Documentación](#Documentación-última-versión-Versión-20)
 * [Información versiones anteriores](#Información-versiones-anteriores)
 * [Autores](#autores)
@@ -14,25 +14,43 @@ Como instructores de Yoga, es fundamental conocer los nombres de las posturas qu
 Todo esto en conjunto con una interfaz gráfica que simula tarjetas de memoria para facilitar el uso y aprendizaje por parte de los usuarios. 
 
 ### Página funcional: <a href ="https://asanas-learn.000webhostapp.com/" target = "_blank"><img src="https://img.shields.io/badge/Clic%20Aqu%C3%AD-blue?style=flat" alt="Clic Aquí" /></a>
-## Vista previa última versión 
+
+## ¿Cómo usarla?
+
+### 1. Sección ASANAS
 Una vez iniciada la aplicación, esta será la primera pantala que visualizaremos. 
 </hr>
-<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/5aebcde0b2f1d6c2d51de5d3a39c1e435e35193b/Resources-Doc/Vista-Versi%C3%B3n2/inicio-asanas.png" alt ="Inicio Aplicación" width ="750px">
+<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/Inicio.png" alt ="Inicio Aplicación" width ="500px">
 
-En esta misma pantalla, al dar clic en el ícono de switch sobre la barra de búsqueda podremos ver el catálogo de morfemas.
+Utiliza la barra de búsqueda para encontrar una asana ya sea por su nombre completo o una parte del mismo. La búsqueda puede ser en inglés, español o sánscrito. 
+<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/Buscar.png" alt ="Boton buscar" width ="200px">
 </hr>
-<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/5aebcde0b2f1d6c2d51de5d3a39c1e435e35193b/Resources-Doc/Vista-Versi%C3%B3n2/inicio-morfemas.png" alt ="Inicio Morfemas" width ="750px">
+<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/8a077b61535682380a54475d3fadf77e9c018898/Resources-Doc/Vista-Versi%C3%B3n3/Busqueda.png" alt ="Busqueda" width ="500px">
 
-Para realizar una búsqueda ingresamos, ya sea de asanas o morfemas, la palabra clave o el nombre completo de la postura a buscar, damos clic en "Buscar" y tendremos lo siguiente. Cabe recalcar que solamente las asanas nos muestran más información de las mismas al dar clic en una de ellas. 
+Si deseas iniciar una nueva búsqueda desde cero, utiliza el botón de limpiar para borrar tu última búsqueda.
 </hr>
-<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/5aebcde0b2f1d6c2d51de5d3a39c1e435e35193b/Resources-Doc/Vista-Versi%C3%B3n2/busqueda-asanas.png" alt ="Búsqueda de Asanas" width ="750px">
-</hr>
-<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/5aebcde0b2f1d6c2d51de5d3a39c1e435e35193b/Resources-Doc/Vista-Versi%C3%B3n2/busqueda-morfemas.png" alt ="Búsqueda de Morfemas" width ="750px">
+<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/Limpiar.png" alt ="Boton limpiar" width ="200px">
 
-Para visualizar la información completa de una postura deseada tendremos la vista de acontinuación. Si notamos, al final de esta tendremos el enlace directo al video que nos enseñará a ejecutar la postura correspondiente.
+Para visualizar la información completa de una postura en específico, después de dar clic en ella tendremos la siguiente vista. Al final de esta vista estará el video que te indicará como ejecutar la postura.
 </hr>
-<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/5aebcde0b2f1d6c2d51de5d3a39c1e435e35193b/Resources-Doc/Vista-Versi%C3%B3n2/asana.png" alt ="Información Asana" width ="750px">
+<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/e39c45faef1574fc6665f672ecc5498b645905b0/Resources-Doc/Vista-Versi%C3%B3n3/VistaPostura.png" alt ="Información Asana" width ="500px">
 
+### 2. Sección MORFEMAS
+Ahora, utiliza el ícono de switch para trasladarte a la sección de diccionario de morfemas.
+</hr>
+<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/CambioBusqueda.png" alt ="Boton limpiar" width ="300px">
+
+Esta es la pantalla que visualizarás al cambiar a la sección de morfemas
+</hr>
+<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/MorfemasInicio.png" alt ="Inicio Morfemas" width ="500px">
+
+Al igual que en la sección de asanas, puedes utilizar la barra de búsqueda para encontrar morfemas específicos. Se tienen los mismos botones con la misma funcionalidad y la búsqueda tambien puede realizarse en cualquiera de los idiomas disponibles.
+</hr>
+<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/BuscarMorfema.png" alt ="Búsqueda de Morfemas" width ="750px">
+
+Si deseas hacer énfasis en algún morfema específico, pasa el mouse por encima y se acenturán los colores
+</hr>
+<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/294646dedfa7b378e64cb0f2d96e39dbe8242e7e/Resources-Doc/Vista-Versi%C3%B3n3/Vista%20Morfema.png" alt ="Vista Morfema" width ="400px">
 
 ## Documentación última versión: Versión 3.0
 
@@ -65,4 +83,4 @@ Para visualizar la información completa de una postura deseada tendremos la vis
 | [<img src="https://avatars.githubusercontent.com/u/102121965?v=4" width=115><br><sub>Alejandra Colcha</sub>](https://github.com/DaColcha) |  [<img src="https://avatars.githubusercontent.com/u/143550175?v=4" width=115><br><sub>Luis de la Cruz</sub>](https://github.com/LuLesDLC) |  [<img src="https://avatars.githubusercontent.com/u/104182598?v=4" width=115><br><sub>Martín Mendieta</sub>](https://github.com/martin-men) | [<img src="https://avatars.githubusercontent.com/u/133171706?v=4" width=115><br><sub>Christopher Zambrano</sub>](https://github.com/Chrisathan12) | [<img src="https://avatars.githubusercontent.com/u/120787560?v=4" width=115><br><sub>Dario Charro</sub>](https://github.com/DarioJ14) |
 | :---: | :---: | :---: | :---: | :---: |
 
-<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/bb5b17e76042b82840d358d33f6dfb6657b671cd/Resources-Doc/logo.png" alt ="Información Asana" width ="500px">
+<img src="https://github.com/martin-men/Yoga_Consultation_System/blob/bb5b17e76042b82840d358d33f6dfb6657b671cd/Resources-Doc/logo.png" alt ="Codity Logo" width ="500px">
